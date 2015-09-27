@@ -1,0 +1,87 @@
+Codebook for output of run_analysis.R contained in tidyDataProj
+==========
+
+The following is a description of the data contained in tidyMeansTable.txt,
+which is the output of the createTidyData function in the run_analysis.R
+script. The output is of the form .txt, and can easily be loaded into R
+using read.table with header = TRUE.
+
+The original (raw) data was taken from 30 subjects while each subject
+performed one of six activities. A variety of measurements were taken, and the
+raw data contains many statistics of these measurements. We included the
+variables containing key words "mean" or "std" (not case sensitive) in our
+cleaning / analysis. We then take the average of each of these statistics by
+subject and activity, and the output of this is tidyMeansTable.txt.
+
+As there were 30 subjects and six activities, tidyMeansTable.txt contains 180
+observations (rows). The subject and activity of each observation are the first
+two variables (columns) in tidyMeansTable.txt, respectively, and the following
+86 variables are those from the raw data (which we have averaged by subject and
+activity). We quote the following from features_info.txt, which can be found in
+the main folder of the unpackaged data, to describe the variables 2-88 in
+tidyMeansTable.txt:
+
+Quote:
+
+The features selected for this database come from the accelerometer and
+gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals
+(prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then
+they were filtered using a median filter and a 3rd order low pass Butterworth
+filter with a corner frequency of 20 Hz to remove noise. Similarly, the
+acceleration signal was then separated into body and gravity acceleration
+signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth
+filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in
+time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the
+magnitude of these three-dimensional signals were calculated using the
+Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag,
+tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals
+producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag,
+fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain
+signals). 
+
+These signals were used to estimate variables of the feature vector for each
+pattern:
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+
+...
+
+Additional vectors obtained by averaging the signals in a signal window sample.
+These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+End quote.
+
+It is worth emphasizing that the values in the table tidyMeansTable.txt are the
+average values (by subject and activity) of the data described above.
